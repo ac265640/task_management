@@ -61,7 +61,7 @@ def login_user(body:LoginSchema,db:Session):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="You entered wrong password")
     
     #token is only valid upto this exp_time 
-    exp_time=datetime.now() + timedelta(seconds=40)
+    exp_time=datetime.now() + timedelta(minutes=settings.EXP_TIME)
     
     
 

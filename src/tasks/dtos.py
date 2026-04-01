@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class  TaskSchema(BaseModel):
     title:str
@@ -11,4 +12,5 @@ class  TaskResponeSchema(BaseModel):
     title:str
     description:str
     is_completed:bool=False
+    user_id: Optional[int] = None
     
